@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Cambiar contraseña</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="navegarAPaginaPrincipal()">
+        <ion-icon name="arrow-back"></ion-icon> Página Principal
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input [(ngModel)]="usuario" type="text" name="usuario"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña Actual</ion-label>
+        <ion-input [(ngModel)]="contrasenaActual" type="password" name="contrasenaActual"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Nueva Contraseña</ion-label>
+        <ion-input [(ngModel)]="nuevaContrasena" type="password" name="nuevaContrasena"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" (click)="cambiarContrasena()">Cambiar Contraseña</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

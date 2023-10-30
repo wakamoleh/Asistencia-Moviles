@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">ASISTENCIA</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="navegarAPaginaPrincipal()">
+        <ion-icon name="arrow-back"></ion-icon> Página Principal
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-radio-group [(ngModel)]="opcionAsistencia">
+      <ion-item>
+        <ion-label>Ingles Avanzado - Inu10105</ion-label>
+        <ion-radio slot="start" [value]="getFechaHora('Ingles Avanzado')"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Programacion de Aplicaciones moviles - Moviles100123</ion-label>
+        <ion-radio slot="start" [value]="getFechaHora('Programacion de apliaciones moviles')"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Programacion de base de datos - BdeDatos1001</ion-label>
+        <ion-radio slot="start" [value]="getFechaHora('Programacion de base de datos')"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Etica para el trabajo - Etica11012</ion-label>
+        <ion-radio slot="start" [value]="getFechaHora('Etica para el trabajo')"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button expand="full" (click)="generarCodigoQR()">Generar Código QR</ion-button>
+
+  <div *ngIf="codigoQRGenerado" class="codigo-qr-container">
+    <img [src]="codigoQRGenerado" alt="Código QR" class="codigo-qr">
+  </div>
+</ion-content>
